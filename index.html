@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fanncraft Todo List</h1>
+        
+        <div class="input-section">
+    <div class="input-group">
+        <input type="text" id="todoInput" placeholder="Add a todo . . .">
+        <span class="error-message" id="todoError"></span>
+    </div>
+    <div class="input-group">
+        <input type="date" id="dateInput">
+        <span class="error-message" id="dateError"></span>
+    </div>
+    <button class="add-btn" onclick="addTodo()">+</button>
+</div>
+
+<div class="delete-modal" id="deleteModal">
+        <div class="modal-content">
+            <h2>Delete All Tasks</h2>
+            <p>Are you sure you want to delete all tasks?</p>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" onclick="closeDeleteModal()">Cancel</button>
+                <button class="modal-btn confirm" onclick="confirmDeleteAll()">Delete All</button>
+            </div>
+        </div>
+    </div>
+
+        <div class="controls">
+            <button class="filter-btn" onclick="filterTodos()">Filter</button>
+            <button class="delete-all-btn" onclick="deleteAll()">Delete All</button>
+        </div>
+
+        <div class="todo-table">
+            <div class="table-header">
+                <div>Task</div>
+                <div>Due Date</div>
+                <div>Status</div>
+                <div>Actions</div>
+            </div>
+            <div class="table-body" id="todoList">
+                <div class="empty-state">No task found</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
